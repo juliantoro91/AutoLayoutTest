@@ -3,4 +3,4 @@ This is an experiment of an Autolayout Screen, usign a conjuction of AutoLayoutG
 
 The dimensions are defined by a JSON file.
 
-Buit in Brighscript and Scenegraph.
+Built in Brighscript and Scenegraph.
