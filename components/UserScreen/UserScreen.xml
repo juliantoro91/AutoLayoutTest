@@ -8,7 +8,7 @@
 	<interface>
 		<field id="content" type="node" alias="userScreenGrid.content"/>
 		<field id="spacing" type="integer" value="45" />
-		<field id="url" type="String" value="https://testappjue.web.app/Sketching/SketchingUserContent.json" />
+		<field id="url" type="String" value="https://testappjue.web.app/AutoLayoutContent.json" />
 		<field id="width" type="Integer" alias="masterFrameRect.width" />
 		<field id="height" type="Integer" alias="masterFrameRect.height" />
 		<field id="dimensionChange" type="Boolean" value="false" onChange="OnFrameChange" />
