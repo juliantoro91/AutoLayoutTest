@@ -12,28 +12,9 @@ function AutoLayout (node as Object, isVertical as Boolean) as Boolean
     parentWidth = parent.width
     parentHeight = parent.height
     
-    ' Get children number and their dimensions
-    grossDimension = 0 ' Variable to store the Height of all components
-    
     childrenQ = node.GetChildCount()
     for each child in node.GetChildren(childrenQ,0)
     
-        ' Calculating GrossDimension and setting parent-child dimensions
-        if child.itemComponentName = invalid
-            if isVertical
-                grossDimension += child.boundingRect().height
-            else
-                grossDimension += child.boundingRect().width
-            end if
-        else if child.itemSize <> invalid
-            if isVertical
-                'grossDimension += child.itemSize[1]
-                grossDimension += child.boundingRect().height
-            else
-                grossDimension += child.itemSize[0]
-            end if
-        end if
-        
         if child.width <> invalid
             if child.avoidDimensionalChange = invalid
                 if isVertical
@@ -57,12 +38,18 @@ function AutoLayout (node as Object, isVertical as Boolean) as Boolean
         
     end for
     
+    grossDimension = 0 ' Variable to store the gross dimension of all components
+        
     ' Calculate itemSpacings
     if isVertical
+        grossDimension = node.boundingRect().height
         itemSpacing = SetItemSpacings(parentHeight, grossDimension, childrenQ)
     else
+        grossDimension = node.boundingRect().width
         itemSpacing = SetItemSpacings(parentWidth, grossDimension, childrenQ)
     end if
+    
+    ? "itemSpacing : ";node.id;" : ";itemSpacing
     
     ' Set itemSpacings
     node.itemSpacings = itemSpacing
