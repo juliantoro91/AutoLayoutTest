@@ -10,7 +10,7 @@ sub ShowScreen(screen as Object)
 
     ? "ScreenStackLogic - ShowScreen()"
     
-    if screen <> invalid AND screen <> m.screenStack.Peek()
+    if screen <> invalid
     
         previousScreen = m.screenStack.Peek()
         if previousScreen <> invalid then previousScreen.visible = false
