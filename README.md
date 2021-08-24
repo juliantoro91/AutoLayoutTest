@@ -5,6 +5,8 @@ The dimensions are defined by a JSON file.
 
 It was built in Brighscript and Scenegraph.
 
+You can see it works: https://youtu.be/XS-4_nK-dro
+
 HOW IT WORKS
 1. User Screen children are included inside a Rectangle and a LayoutGroup Nodes.
 2. The dimensions of the limit area are defined by rectangle dimensions.
